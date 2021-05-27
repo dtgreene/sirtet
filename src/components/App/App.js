@@ -256,56 +256,63 @@ const App = () => {
 	}, [countdownStyle, countdownText, gameState]);
 
 	return (
-		<div className="d-flex justify-content-center no-select">
-			<div className="canvas__container">
-				<canvas width="360" height="720" ref={canvasRef}></canvas>
-				{mainOverlay}
-				{gameOverOverlay}
-				{pauseOverlay}
-				{countdownOverlay}
-			</div>
-			<div className="ui__group ml-3">
-				<div className="border rounded mb-3 p-3">
-					<h3 className="m-0">
-						<u>Score</u>
-						<br />
-						{gameStats.score}
-					</h3>
+		<>
+			<div className="d-flex justify-content-center no-select">
+				<div className="canvas__container">
+					<canvas width="360" height="720" ref={canvasRef}></canvas>
+					{mainOverlay}
+					{gameOverOverlay}
+					{pauseOverlay}
+					{countdownOverlay}
 				</div>
-				<div className="border rounded mb-3 p-3">
-					<h3 className="m-0">
-						<u>Lines</u>
-						<br />
-						{gameStats.lines}
-					</h3>
-				</div>
-				<div className="border rounded mb-3 p-3">
-					<h3 className="m-0">
-						<u>Level</u>
-						<br />
-						{gameStats.level}
-					</h3>
-				</div>
-				<div className="border rounded mb-3 p-3">
-					<h3 className="m-0">
-						<u>Next</u>
-						<br />
-						<img
-							src={
-								gameStats.next ? gameStats.next.src : undefined
-							}
-						/>
-					</h3>
-				</div>
+				<div className="ui__group ml-3">
+					<div className="border rounded mb-3 p-3">
+						<h3 className="m-0">
+							<u>Score</u>
+							<br />
+							{gameStats.score}
+						</h3>
+					</div>
+					<div className="border rounded mb-3 p-3">
+						<h3 className="m-0">
+							<u>Lines</u>
+							<br />
+							{gameStats.lines}
+						</h3>
+					</div>
+					<div className="border rounded mb-3 p-3">
+						<h3 className="m-0">
+							<u>Level</u>
+							<br />
+							{gameStats.level}
+						</h3>
+					</div>
+					<div className="border rounded mb-3 p-3">
+						<h3 className="m-0">
+							<u>Next</u>
+							<br />
+							<img
+								src={
+									gameStats.next ? gameStats.next.src : undefined
+								}
+							/>
+						</h3>
+					</div>
 
-				<button
-					className="btn btn-outline-dark btn-sm"
-					onClick={muteHandler}
-				>
-					{gameMuted ? 'unmute' : 'mute'}
-				</button>
+					<button
+						className="btn btn-outline-dark btn-sm"
+						onClick={muteHandler}
+					>
+						{gameMuted ? 'unmute' : 'mute'}
+					</button>
+				</div>
 			</div>
-		</div>
+			<div className="w-100 text-left d-inline-block p-3">
+				<a className="text-dark" href="https://github.com/greeneman42/sirtet" target="_">
+					Github
+				</a>				
+			</div>
+		</>
 	);
 };
 
